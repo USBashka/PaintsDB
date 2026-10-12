@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'">
+  <title>PaintsDB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="file-menu"><button id="file-button" aria-expanded="false">Файл ▾</button><div id="file-menu" class="menu" hidden>
+      <button data-file="create">Создать базу…</button><button data-file="open">Открыть базу…</button>
+      <button data-file="backup" class="needs-db">Резервная копия…</button><hr><button id="mcp-button">Подключение MCP</button>
+    </div></div>
+    <nav aria-label="Разделы"><button data-view="recipes" class="active">Рецепты</button><button data-view="components">Компоненты</button><button data-view="compare">Сравнение</button></nav>
+    <span id="database-name" title="">База не открыта</span>
+  </header>
+  <div id="notice" role="status" hidden></div>
+  <main id="main"><div class="empty"><h1>PaintsDB</h1><div class="actions"><button data-file="create" class="primary">Создать базу</button><button data-file="open">Открыть базу</button></div></div></main>
+  <footer><span id="status">Готово</span><span id="connection">MCP · локально</span></footer>
+  <dialog id="dialog"><div id="dialog-content"></div></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
